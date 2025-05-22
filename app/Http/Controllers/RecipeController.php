@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RecipeController extends Controller
 {
@@ -25,7 +26,11 @@ class RecipeController extends Controller
            'description' => 'required|string',
        ]);
 
-       Recipe::create($request->all());
+       /*Recipe::create($request->all());*/
+       DB::table('recipes')->insert([
+           'title' => $request->title,
+           'description' => $request->description
+       ]);
        return redirect()->route('recipes.index')->with('success', 'Recipe created successfully.');
    }
 
@@ -41,7 +46,11 @@ class RecipeController extends Controller
             'description' => 'required|string',
         ]);
 
-        $recipe->update($request->all());
+        /*$recipe->update($request->all());*/
+        DB::table('recipes')->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
         return redirect()->route('recipes.index')->with('success', 'Recipe updated successfully.');
     }
 
