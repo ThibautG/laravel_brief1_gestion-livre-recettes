@@ -1,61 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="https://img.shields.io/badge/Made%20with-Laravel-red.svg" alt="Made with Laravel">
+    <img src="https://img.shields.io/badge/Type-CRUD%20App-blue.svg" alt="CRUD App">
+    <img src="https://img.shields.io/badge/Usage-Educational%20Project-orange" alt="Usage">
+    <img src="https://img.shields.io/badge/Status-Project%20Completed-brightgreen" alt="Project Status">
 </p>
 
-## About Laravel
+# 📘 Laravel - Gestion d’un Livre de Recettes
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Ce projet a été réalisé dans le cadre du **Brief 1 Laravel** :
+> "Créer une application web permettant à un utilisateur de lister, ajouter, modifier et supprimer des recettes."
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔧 Fonctionnalités
 
-## Learning Laravel
+L'application permet à l'utilisateur de :
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- 📄 **Lister** toutes les recettes existantes (`READ`)
+- ➕ **Ajouter** une nouvelle recette avec un titre et une description (`CREATE`)
+- ✏️ **Modifier** une recette existante (`UPDATE`)
+- ❌ **Supprimer** une recette (`DELETE`)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+L'ensemble du cycle **CRUD** a été mis en œuvre avec :
+- Contrôleurs Laravel
+- Blade pour les vues
+- Eloquent ORM
+- Base de données SQLite
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🧭 Parcours utilisateur
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Les captures d'écran présentées dans ce document suivent le **chemin fonctionnel principal** de l'application :
 
-### Premium Partners
+1. **Création d'une recette** via un formulaire simple
+2. **Affichage de la liste des recettes**
+3. **Édition d'une recette** sélectionnée
+4. **Affichage post-modification**
+5. **Suppression d'une recette** et affichage mis à jour
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## ⚙️ Technologies utilisées
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Laravel 12**
+- **Blade** (moteur de templates)
+- **SQLite** pour la base de données
+- **PHP 8.2+** (compatibilité du projet)
+- **Bootstrap** (via CDN ou installation locale) ou Tailwind CSS
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📂 Structure du projet
 
-## Security Vulnerabilities
+- `/routes/web.php` → Déclaration des routes CRUD
+- `/app/Http/Controllers/RecipeController.php` → Contrôleur principal
+- `/app/Models/Recipe.php` → Modèle Eloquent de la recette
+- `/resources/views/recipes/` → Vues Blade (index, create, edit, etc.)
+- `/database/database.sqlite` → Base de données SQLite
+- `/database/migrations/` → Fichiers de migration pour la table `recipes`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## ▶️ Lancer le projet
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Cloner le dépôt :
+```bash
+git clone https://github.com/ThibautG/laravel_brief1_gestion-livre-recettes.git
+cd laravel_brief1_gestion-livre-recettes
+```
+
+2. Installer les dépendances :
+```bash
+composer install
+npm install && npm run dev
+```
+
+3. Configurer `.env` :
+```env
+DB_CONNECTION=sqlite
+DB_DATABASE=/chemin/absolu/vers/database/database.sqlite
+```
+
+4. Créer la base :
+```bash
+touch database/database.sqlite
+php artisan migrate
+```
+
+5. Lancer le serveur :
+```bash
+php artisan serve
+```
+
+---
+
+## ✅ Résultat attendu
+
+L'application propose une interface simple et fonctionnelle pour gérer des recettes de cuisine.  
+Le CRUD est complet, les routes et vues sont cohérentes, et les données sont bien enregistrées dans la base SQLite.
