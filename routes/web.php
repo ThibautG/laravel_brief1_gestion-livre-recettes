@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Recette;
-use App\Http\Controllers\RecipesController;
+use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +35,6 @@ Route::get('/recettes/{id}', function (int $id){
 })->name('recettes.show');
 
 /* Route pour le brief -- resource */
-Route::resource('recipes', RecipesController::class)
+Route::resource('recipes', RecipeController::class)
 
 ?>

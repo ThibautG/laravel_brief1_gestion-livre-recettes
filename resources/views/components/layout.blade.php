@@ -16,6 +16,7 @@
     <li><a href="/">Welcome</a></li>
     <li><a href="/projects">Projects</a></li>
     <li><a href="/recettes">Recettes</a></li>
+    <li><a href="/recipes">Recipe Manager</a></li>
 </ul>
 
 {{$slot}}
