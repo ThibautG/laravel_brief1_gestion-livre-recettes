@@ -47,7 +47,9 @@ class RecipeController extends Controller
         ]);
 
         /*$recipe->update($request->all());*/
-        DB::table('recipes')->update([
+        DB::table('recipes')
+            ->where('id', $recipe->id)
+            ->update([
             'title' => $request->title,
             'description' => $request->description
         ]);
