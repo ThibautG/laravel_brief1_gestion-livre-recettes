@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
 
 class Recette
 {
     public function getAll():array
     {
+
       return [
           1 => [
               'title' => 'Recette 1',
@@ -28,6 +30,7 @@ class Recette
               'instructions' => 'Instructions de la recette 3',
           ],
       ];
+
     }
 
     public function getById(int $id):array {
